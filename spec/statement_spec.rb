@@ -5,5 +5,4 @@ describe Statement do
 
   it { expect(statement.transactions).to be_empty }
 
-
 end
