@@ -12,12 +12,16 @@ class Bank_account
 
   def deposit(amount)
     @balance += amount
+    @statement.store_credit_trans(amount, @balance)
   end
 
   def withdraw(amount)
     no_credit?(amount)
     @balance -= amount
+    @statement.store_debit_trans(amount, @balance)
   end
+
+  private
 
   def no_credit?(amount)
     raise "Not enough money left in your account!" if @balance <= amount
