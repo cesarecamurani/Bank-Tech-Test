@@ -3,7 +3,7 @@ require 'timecop'
 
 describe Statement do
   subject(:statement) { described_class.new(receipt) }
-  let(:receipt) { double 'receipt', print_statement: 'statement' }
+  let(:receipt) { double 'receipt', print: 'statement' }
 
   before :each do
     Timecop.freeze(Time.now)
@@ -31,7 +31,7 @@ describe Statement do
 
   describe '#print' do
     it 'prints all the transactions' do
-      expect(receipt.print_statement).to eq('statement')
+      expect(receipt.print).to eq('statement')
     end
   end
 end

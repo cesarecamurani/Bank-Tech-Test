@@ -17,6 +17,6 @@ class Statement
   end
 
   def print
-    @receipt.print_statement(@transactions)
+    @receipt.print(@transactions)
   end
 end
