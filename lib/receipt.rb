@@ -1,22 +1,15 @@
 class Receipt
   def print_statement(transactions)
-    ['date || credit || debit || balance'] +
-    transactions.each do |trans|
-      [
-        date_format(trans[:date]),
-        convert(trans[:credit]),
-        convert(trans[:debit]),
-        convert(trans[:balance])
-      ].join(' || ')
-    end
-  end
+    output = 'date || credit || debit || balance ' + "\n "
 
-  def date_format(date)
-    date.strftime('%d/%m/%Y')
+    transactions.reverse.each do |trans|
+      output += "#{trans[:date]} || #{convert(trans[:credit])} || #{convert(trans[:debit])} || #{convert(trans[:balance])} " + "\n "
+    end
+    return output
   end
 
   def convert(number)
-    sprintf('%.2f', number)
+    sprintf('%.2f', number) unless number.nil?
   end
 
 end

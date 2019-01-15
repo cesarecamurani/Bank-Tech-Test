@@ -3,10 +3,10 @@ require 'timecop'
 
 describe BankAccount do
   subject(:account) { described_class.new(statement) }
-  let(:statement) { double 'statement', credit_trans: 1000, debit_trans: 1000, print_statement: [balance: 0,
+  let(:statement) { double 'statement', credit_trans: 1000, debit_trans: 1000, print_statement: [date: Time.now.strftime('%d/%m/%Y'),
                                                                                                  credit: 1000,
                                                                                                  debit: 1000,
-                                                                                                 date: Time.now] }
+                                                                                                 balance: 0] }
 
   before :each do
     Timecop.freeze(Time.now)
@@ -37,10 +37,10 @@ describe BankAccount do
 
   describe '#print_statement' do
     it 'shows all the transactions' do
-      expect(statement.print_statement).to eq [balance: 0,
+      expect(statement.print_statement).to eq [date: Time.now.strftime('%d/%m/%Y'),
                                                credit: 1000,
                                                debit: 1000,
-                                               date: Time.now]
+                                               balance: 0]
     end
   end
 

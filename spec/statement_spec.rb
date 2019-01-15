@@ -15,17 +15,21 @@ describe Statement do
 
   describe '#store_credit_trans' do
     it 'stores the deposit transaction in the statement' do
-      expect(statement.credit_trans(1000, 2000)).to eq [balance: 2000,
+      expect(statement.credit_trans(1000, 2000)).to eq [date: Time.now.strftime('%d/%m/%Y'),
                                                         credit: 1000,
-                                                        date: Time.now]
+                                                        debit: nil,
+                                                        balance: 2000
+                                                       ]
     end
   end
 
   describe '#store_debit_trans' do
     it 'stores the withdrawal transaction in the statement' do
-      expect(statement.debit_trans(1000, 2000)).to eq [balance: 2000,
+      expect(statement.debit_trans(1000, 2000)).to eq [date: Time.now.strftime('%d/%m/%Y'),
+                                                       credit: nil,
                                                        debit: 1000,
-                                                       date: Time.now]
+                                                       balance: 2000
+                                                       ]
     end
   end
 

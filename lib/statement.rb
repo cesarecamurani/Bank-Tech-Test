@@ -9,11 +9,11 @@ class Statement
   end
 
   def credit_trans(credit, balance)
-     @transactions << { credit: credit, balance: balance, date: Time.now }
+    @transactions << { date: Time.now.strftime('%d/%m/%Y'), credit: credit, debit: nil, balance: balance }
   end
 
   def debit_trans(debit, balance)
-    @transactions << { debit: debit, balance: balance, date: Time.now }
+    @transactions << { date: Time.now.strftime('%d/%m/%Y'), credit: nil, debit: debit, balance: balance }
   end
 
   def print
