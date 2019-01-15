@@ -3,10 +3,18 @@
     "coverage": {
       "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/spec/bank_account_spec.rb": [
         1,
+        1,
         null,
         1,
         5,
+        6,
+        null,
+        null,
+        null,
+        null,
+        1,
         5,
+        null,
         null,
         2,
         null,
@@ -28,6 +36,15 @@
         1,
         1,
         2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -54,6 +71,10 @@
         3,
         2,
         2,
+        null,
+        null,
+        1,
+        0,
         null,
         null,
         1,
@@ -101,6 +122,15 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/spec/receipt_spec.rb": [
@@ -112,6 +142,11 @@
         1,
         null,
         1,
+        1,
+        null,
+        null,
+        null,
+        null,
         1,
         1,
         1,
@@ -163,6 +198,6 @@
         null
       ]
     },
-    "timestamp": 1547496720
+    "timestamp": 1547562492
   }
 }

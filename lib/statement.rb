@@ -9,7 +9,7 @@ class Statement
   end
 
   def credit_trans(credit, balance)
-    @transactions << { credit: credit, balance: balance, date: Time.now }
+     @transactions << { credit: credit, balance: balance, date: Time.now }
   end
 
   def debit_trans(debit, balance)
@@ -17,6 +17,6 @@ class Statement
   end
 
   def print
-    @receipt.print(@transactions)
+    @receipt.print_statement(@transactions)
   end
 end
