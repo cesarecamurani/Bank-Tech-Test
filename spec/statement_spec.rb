@@ -9,10 +9,6 @@ describe Statement do
     Timecop.freeze(Time.now)
   end
 
-  it 'transactions should be empty' do
-    expect(statement.transactions).to be_empty
-  end
-
   describe '#store_credit_trans' do
     it 'stores the deposit transaction in the statement' do
       expect(statement.credit_trans(1000, 2000)).to eq [date: Time.now.strftime('%d/%m/%Y'),
