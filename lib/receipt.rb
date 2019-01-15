@@ -8,6 +8,8 @@ class Receipt
     return output
   end
 
+  private
+
   def convert(number)
     sprintf('%.2f', number) unless number.nil?
   end

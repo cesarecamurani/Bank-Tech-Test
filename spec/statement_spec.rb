@@ -9,23 +9,18 @@ describe Statement do
     Timecop.freeze(Time.now)
   end
 
+  credit_data = [date: Time.now.strftime('%d/%m/%Y'), credit: 1000, debit: nil, balance: 2000]
+  debit_data = [date: Time.now.strftime('%d/%m/%Y'), credit: nil, debit: 1000, balance: 2000]
+
   describe '#store_credit_trans' do
     it 'stores the deposit transaction in the statement' do
-      expect(statement.credit_trans(1000, 2000)).to eq [date: Time.now.strftime('%d/%m/%Y'),
-                                                        credit: 1000,
-                                                        debit: nil,
-                                                        balance: 2000
-                                                       ]
+      expect(statement.credit_trans(1000, 2000)).to eq(credit_data)
     end
   end
 
   describe '#store_debit_trans' do
     it 'stores the withdrawal transaction in the statement' do
-      expect(statement.debit_trans(1000, 2000)).to eq [date: Time.now.strftime('%d/%m/%Y'),
-                                                       credit: nil,
-                                                       debit: 1000,
-                                                       balance: 2000
-                                                       ]
+      expect(statement.debit_trans(1000, 2000)).to eq(debit_data)
     end
   end
 
