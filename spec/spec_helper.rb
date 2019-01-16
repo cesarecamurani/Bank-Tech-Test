@@ -68,7 +68,7 @@ RSpec.configure do |config|
   #   - http://rspec.info/blog/2012/06/rspecs-new-expectation-syntax/
   #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
   #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
-  # config.disable_monkey_patching!
+    # config.disable_monkey_patching!
 
     # This setting enables warnings. It's recommended, but in some cases may
     # be too noisy due to issues in dependencies.
@@ -79,7 +79,7 @@ RSpec.configure do |config|
     # individual spec file.
     # if config.files_to_run.one?
     # Use the documentation formatter for detailed output,
-    # unless a formatter has already been configured
+  # unless a formatter has already been configured
   # (e.g. via a command-line flag).
   # config.default_formatter = "doc"
   # end

@@ -10,17 +10,17 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
-    @statement.credit_trans(amount, @balance)
+    @statement.credit(amount, @balance)
   end
 
   def withdraw(amount)
     no_credit?(amount)
     @balance -= amount
-    @statement.debit_trans(amount, @balance)
+    @statement.debit(amount, @balance)
   end
 
-  def print_statement
-    @statement.print
+  def print
+    puts @statement.print
   end
 
   private

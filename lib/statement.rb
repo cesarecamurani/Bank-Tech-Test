@@ -1,22 +1,28 @@
-require_relative 'receipt'
+require_relative 'show_statement'
 # class responsible for storing and printing all the transactions
 class Statement
   attr_accessor :transactions
 
-  def initialize(receipt = Receipt.new)
+  def initialize(show_statement = ShowStatement.new)
     @transactions = []
-    @receipt = receipt
+    @show_statement = show_statement
   end
 
-  def credit_trans(credit, balance)
-    @transactions << { date: Time.now.strftime('%d/%m/%Y'), credit: credit, debit: nil, balance: balance }
+  def credit(credit, balance)
+    @transactions << { date: Time.now.strftime('%d/%m/%Y'),
+                       credit: credit,
+                       debit: nil,
+                       balance: balance }
   end
 
-  def debit_trans(debit, balance)
-    @transactions << { date: Time.now.strftime('%d/%m/%Y'), credit: nil, debit: debit, balance: balance }
+  def debit(debit, balance)
+    @transactions << { date: Time.now.strftime('%d/%m/%Y'),
+                       credit: nil,
+                       debit: debit,
+                       balance: balance }
   end
 
   def print
-    @receipt.print_statement(@transactions)
+    @show_statement.display(@transactions)
   end
 end
