@@ -17,7 +17,7 @@ describe BankAccount do
   describe '#deposit' do
     it 'let the customer deposit money into the account' do
       account.deposit(1000)
-      expect(account.balance).to eq 1000
+      expect(statement.credit).to eq 1000
     end
   end
 
@@ -25,7 +25,7 @@ describe BankAccount do
     it 'let the customer withdraw money from the account' do
       account.deposit(2000)
       account.withdraw(1000)
-      expect(account.balance).to eq 1000
+      expect(statement.debit).to eq 1000
     end
 
     it 'raises an error if you try to withdraw more money than you have' do

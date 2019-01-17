@@ -9,9 +9,9 @@ class ShowStatement
 
   def display(transactions)
     transactions.reverse.each do |t|
-      @header += "#{t[:date]} || #{convert(t[:credit])} || #{convert(t[:debit])} || #{convert(t[:balance])}" + " \n "
+      @header += "#{t[:date]} || #{convert(t[:credit])} || #{convert(t[:debit])} || #{convert(t[:balance])}\n "
     end
-    puts @header
+    @header
   end
 
   private

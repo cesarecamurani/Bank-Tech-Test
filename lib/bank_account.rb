@@ -2,7 +2,7 @@ require_relative 'statement'
 
 # main class responsible for updating the statement
 class BankAccount
-  attr_reader :balance
+
   def initialize(statement = Statement.new)
     @balance = 0
     @statement = statement
