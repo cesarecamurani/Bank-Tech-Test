@@ -1,28 +1,28 @@
-require_relative 'show_statement'
-# class responsible for storing and printing all the transactions
+# class responsible for showing the statement
 class Statement
-  attr_accessor :transactions
 
-  def initialize(show_statement = ShowStatement.new)
-    @transactions = []
-    @show_statement = show_statement
+  HEADER = " date || credit || debit || balance\n "
+
+  def initialize(header = HEADER)
+    @header = header
   end
 
-  def credit(credit, balance)
-    @transactions << { date: Time.now.strftime('%d/%m/%Y'),
-                       credit: credit,
-                       debit: nil,
-                       balance: balance }
+  def display(transactions)
+    transactions.reverse.each do |t|
+      @header += [
+                  t[:date],
+                  convert(t[:credit]),
+                  convert(t[:debit]),
+                  convert(t[:balance])
+                ].join(" || ") + "\n "
+    end
+    @header
   end
 
-  def debit(debit, balance)
-    @transactions << { date: Time.now.strftime('%d/%m/%Y'),
-                       credit: nil,
-                       debit: debit,
-                       balance: balance }
+  private
+
+  def convert(number)
+    format('%.2f', number) unless number.nil?
   end
 
-  def print
-    @show_statement.display(@transactions)
-  end
 end

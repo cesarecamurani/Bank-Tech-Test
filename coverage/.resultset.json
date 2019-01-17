@@ -80,7 +80,7 @@
         null,
         null
       ],
-      "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/lib/statement.rb": [
+      "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/lib/transaction.rb": [
         1,
         null,
         1,
@@ -110,7 +110,7 @@
         null,
         null
       ],
-      "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/lib/show_statement.rb": [
+      "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/lib/statement.rb": [
         null,
         1,
         null,
@@ -123,6 +123,11 @@
         1,
         2,
         4,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         2,
         null,
@@ -181,7 +186,7 @@
         null,
         null
       ],
-      "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/spec/show_statement_spec.rb": [
+      "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/spec/statement_spec.rb": [
         1,
         1,
         null,
@@ -207,7 +212,7 @@
         null,
         null
       ],
-      "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/spec/statement_spec.rb": [
+      "/Users/cesarecamurani/Desktop/Projects/Week_10/Bank-Tech-Test/spec/transaction_spec.rb": [
         1,
         1,
         null,
@@ -249,6 +254,6 @@
         null
       ]
     },
-    "timestamp": 1547720141
+    "timestamp": 1547722258
   }
 }

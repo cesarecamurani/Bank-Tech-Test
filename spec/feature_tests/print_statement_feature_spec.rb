@@ -1,6 +1,6 @@
 require 'bank_account'
 
-describe 'feature displays statement' do
+describe 'feature test display statement' do
   let(:my_account) { BankAccount.new }
 
   it 'displays a statement' do
@@ -8,7 +8,7 @@ describe 'feature displays statement' do
     my_account.withdraw(500)
     printed_balance = " date || credit || debit || balance\n"\
                        " #{Time.now.strftime('%d/%m/%Y')} ||  || 500.00 || 1500.00\n"\
-                       " #{Time.now.strftime('%d/%m/%Y')} || 2000.00 ||  || 2000.00\n"
-    expect { my_account.print }.to output(printed_balance).to_stdout
+                       " #{Time.now.strftime('%d/%m/%Y')} || 2000.00 ||  || 2000.00\n \n"
+    expect { my_account.print_statement }.to output(printed_balance).to_stdout
   end
 end

@@ -1,26 +1,26 @@
-require_relative 'statement'
+require_relative 'transaction'
 
 # main class responsible for updating the statement
 class BankAccount
 
-  def initialize(statement = Statement.new)
+  def initialize(transaction = Transaction.new)
     @balance = 0
-    @statement = statement
+    @transaction = transaction
   end
 
   def deposit(amount)
     @balance += amount
-    @statement.credit(amount, @balance)
+    @transaction.credit(amount, @balance)
   end
 
   def withdraw(amount)
     no_credit?(amount)
     @balance -= amount
-    @statement.debit(amount, @balance)
+    @transaction.debit(amount, @balance)
   end
 
-  def print
-    puts @statement.print
+  def print_statement
+    puts @transaction.print
   end
 
   private
