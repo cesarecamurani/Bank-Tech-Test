@@ -5,8 +5,8 @@ describe BankAccount do
   subject(:account) { described_class.new(transaction) }
   let(:transaction) {
     double :transaction,
-    credit: 1000,
-    debit: 1000,
+    credit: nil,
+    debit: nil,
     print: "transactions"
   }
 
@@ -16,16 +16,21 @@ describe BankAccount do
 
   describe '#deposit' do
     it 'let the customer deposit money into the account' do
-      account.deposit(1000)
-      expect(transaction.credit).to eq 1000
+      expect(account.deposit(6000)).to eq transaction.credit
     end
   end
 
+  # describe '#deposit' do
+  #   it 'let the customer deposit money into the account' do
+  #     account.deposit(1000)
+  #     expect(transaction.credit).to eq 1000
+  #   end
+  # end
+
   describe '#withdraw' do
     it 'let the customer withdraw money from the account' do
-      account.deposit(2000)
-      account.withdraw(1000)
-      expect(transaction.debit).to eq 1000
+      account.deposit(6000)
+      expect(account.withdraw(3000)).to eq transaction.debit
     end
 
     it 'raises an error if you try to withdraw more money than you have' do
